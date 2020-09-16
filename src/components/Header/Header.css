@@ -1,0 +1,11 @@
+.navbar img{
+    height: 60px;
+}
+
+::placeholder{
+    color: white !important;
+}
+
+.navbar{
+    font-family: 'Montserrat', sans-serif!important;
+}
