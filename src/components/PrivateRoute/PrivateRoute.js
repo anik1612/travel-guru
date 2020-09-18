@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, useLocation } from 'react-router-dom';
 import { SelectPlaceContext } from '../../App';
 
 const PrivateRoute = ({ children, ...rest }) => {

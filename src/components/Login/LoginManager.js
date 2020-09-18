@@ -12,12 +12,11 @@ export const handleGoogleSignIn = () => {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     return firebase.auth().signInWithPopup(googleProvider)
     .then(res => {
-      const {displayName, photoURL, email} = res.user;
+      const {displayName, email} = res.user;
       const signedInUser = {
         isSignedIn: true,
         name: displayName,
         email: email,
-        photo: photoURL,
         success: true
       };
       return signedInUser;
@@ -48,7 +47,6 @@ export const handleGoogleSignIn = () => {
         isSignedIn: false,
         name: '',
         email: '',
-        photo: '',
         error: '',
         success: false
       }
@@ -75,7 +73,7 @@ export const handleGoogleSignIn = () => {
     });
  }
 
- export const signInWithEmailAndPassword = (email, password) =>{
+ export const signInWithEmailAndPassword = (email, password) => {
     return firebase.auth().signInWithEmailAndPassword(email, password)
     .then(res => {
       const newUserInfo = res.user;

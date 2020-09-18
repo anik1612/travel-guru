@@ -24,10 +24,10 @@ function App() {
     <SelectPlaceContext.Provider value={[selectedPlace, setSelectedPlace, loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-          <Route path="/home">
-            <Home />
+        <Route path="/bookingdetails">
+            <BookingDetails />
           </Route>
-          <Route exact path="/">
+          <Route path="/home">
             <Home />
           </Route>
           <Route path="/login">
@@ -36,11 +36,20 @@ function App() {
           <Route path="/booking">
             <Booking />
           </Route>
-          <Route path="/bookingdetails">
-            <BookingDetails />
-          </Route>
-          <Route path={"/news" | "/destination" | "/blog" | "/contact"}>
+          <Route exact path="/news">
             <DeveloperSleeping />
+          </Route>
+          <Route exact path="/destination">
+            <DeveloperSleeping />
+          </Route>
+          <Route exact path="/blog">
+            <DeveloperSleeping />
+          </Route>
+          <Route exact path="/contact">
+            <DeveloperSleeping />
+          </Route>
+          <Route exact path="/">
+            <Home />
           </Route>
           <Route path="*">
             <NoMatch />

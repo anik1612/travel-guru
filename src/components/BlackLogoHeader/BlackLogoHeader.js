@@ -19,8 +19,8 @@ const BlackLogoHeader = () => {
                         <Link to="/news" className="mr-5 text-dark font-weight-bold">News</Link>
                         <Link to="/destination" className="mr-5 text-dark font-weight-bold">Destination</Link>
                         <Link to="/blog" className="mr-5 text-dark font-weight-bold">Blog</Link>
-                        <Link to="/Contact" className="mr-5 text-dark font-weight-bold">Contact</Link>
-                        {loggedInUser.email || loggedInUser.name ? <Link className="btn btn-success">{loggedInUser.name}</Link> : <Link to="/login" className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Link>
+                        <Link to="/contact" className="mr-5 text-dark font-weight-bold">Contact</Link>
+                        {loggedInUser.email || loggedInUser.name ? <Link onClick={()=> setLoggedInUser({})} className="btn btn-success">{loggedInUser.name ? loggedInUser.name + ' / Logout' : loggedInUser.email.slice(0,5) + ' / Logout'}</Link> : <Link to="/login" className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Link>
                         }
                     </Nav>
                 </Navbar.Collapse>

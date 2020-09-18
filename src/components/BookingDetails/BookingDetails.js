@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { SelectPlaceContext } from '../../App';
+import React, { useState } from 'react';
 import hotelFakeData from '../../hotelFakeData';
 import BlackLogoHeader from '../BlackLogoHeader/BlackLogoHeader';
 import star from '../../images/Icon/star_1_.png';
 import './BookingDetails.css'
+import Map from '../Map/Map';
 
 const style = {
     width: '200px',
@@ -15,7 +15,7 @@ const style = {
 const BookingDetails = () => {
 
     const hotel = hotelFakeData.slice(0, 3);
-    const [hotels, setHotels] = useState(hotel);
+    const [hotels] = useState(hotel);
 
     return (
         <div className='container-fluid mb-5'>
@@ -34,10 +34,11 @@ const BookingDetails = () => {
                                     <div className='col-md-4 mr-2'>
                                         <img src={hotel.img} style={style} alt="" />
                                     </div>
+
                                     <div className='col-md-7'>
                                         <ul className='p-0 pl-md-5'>
                                             <li>
-                                               <h4 className="text-dark mt-2 mt-md-0">{hotel.name}</h4>
+                                                <h4 className="text-dark mt-2 mt-md-0">{hotel.name}</h4>
                                             </li>
                                             <li>
                                                 {hotel.spec}
@@ -48,9 +49,15 @@ const BookingDetails = () => {
                                             <li>
                                                 {hotel.cancel}
                                             </li>
+
                                             <div className='d-flex justify-content-around'>
-                                                <div><img src={star} style={{ width: '20px' }} alt="" /> {hotel.star}({hotel.available})</div> 
-                                                <div className='font-weight-bold'>${hotel.price}/night</div>
+                                                <div>
+                                                    <img src={star} style={{ width: '20px' }} alt="" />
+                                                    {hotel.star}({hotel.available})
+                                                </div>
+                                                <div className='font-weight-bold'>
+                                                    ${hotel.price}/night
+                                                </div>
                                             </div>
                                         </ul>
                                     </div>
@@ -62,7 +69,7 @@ const BookingDetails = () => {
 
                 {/* google map */}
                 <div className='col-md-6'>
-                    
+                    <Map></Map>
                 </div>
             </div>
         </div>
