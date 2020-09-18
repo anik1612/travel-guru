@@ -1,0 +1,13 @@
+ul li{
+    list-style: none;
+    color: #6A6A6A;
+}
+
+.hotel-card{
+    box-shadow: 3px 1px 10px lightgrey;
+}
+
+.hotel-card:hover{
+    box-shadow: 3px 1px 10px goldenrod;
+    cursor: pointer;
+}

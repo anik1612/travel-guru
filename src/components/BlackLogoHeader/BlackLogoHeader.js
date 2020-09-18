@@ -20,7 +20,7 @@ const BlackLogoHeader = () => {
                         <Link to="/destination" className="mr-5 text-dark font-weight-bold">Destination</Link>
                         <Link to="/blog" className="mr-5 text-dark font-weight-bold">Blog</Link>
                         <Link to="/Contact" className="mr-5 text-dark font-weight-bold">Contact</Link>
-                        {loggedInUser.email || loggedInUser.name ? <Link className="btn btn-dark">{loggedInUser.name}</Link> : <Link to="/login" className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Link>
+                        {loggedInUser.email || loggedInUser.name ? <Link className="btn btn-success">{loggedInUser.name}</Link> : <Link to="/login" className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Link>
                         }
                     </Nav>
                 </Navbar.Collapse>

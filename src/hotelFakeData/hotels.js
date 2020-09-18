@@ -1,24 +1,112 @@
 const hotels = [{
     "id": 1,
-    "name": "COX'S BAZAR",
-    "desc": `Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...`,
-    "fullDesc": `Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.`,
-    "img": "https://i.ibb.co/ngC53dv/Rectangle-28.png"
+    "hotelId": 1,
+    "img": 'https://i.ibb.co/RzJ3zJN/Rectangle-26.png',
+    "name": 'Hotel Singer',
+    "spec": "4 Guests 2 Bedrooms 2 Beds 2 Baths",
+    "wifi": "Free Wifi Air Conditioning Kitchen",
+    "available": 10,
+    "star": 4.9,
+    "price": 34,
+    "cancel": 'Cancellation flexibility available'
+},
+{
+    "id": 1,
+    "hotelId": 2,
+    "img": 'https://i.ibb.co/ngC53dv/Rectangle-28.png',
+    "name": 'Hotel BD',
+    "spec": "4 Guests 2 Bedrooms 2 Beds 2 Baths",
+    "wifi": "Free Wifi Air Conditioning Kitchen",
+    "available": 20,
+    "star": 4.8,
+    "price": 52,
+    "cancel": 'Cancellation flexibility available'
+},
+{
+    "id": 1,
+    "hotelId": 3,
+    "img": 'https://i.ibb.co/TtQLPy9/Rectangle-27.png',
+    "name": 'Hotel Home',
+    "spec": "4 Guests 2 Bedrooms 2 Beds 2 Baths",
+    "wifi": "Free Wifi Air Conditioning Kitchen",
+    "available": 25,
+    "star": 4.9,
+    "price": 44,
+    "cancel": 'Cancellation flexibility available'
+},
 
+{
+    "id": 2,
+    "hotelId": 1,
+    "img": 'https://i.ibb.co/txnNwQv/hotel1.jpg',
+    "name": 'Hotel King',
+    "spec": "4 Guests 2 Bedrooms 2 Beds 2 Baths",
+    "wifi": "Free Wifi Air Conditioning Kitchen",
+    "available": 10,
+    "star": 4.9,
+    "price": 44,
+    "cancel": 'Cancellation flexibility available'
 },
 {
     "id": 2,
-    "name": "SREEMANGAL",
-    "desc": `Sreemangal is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...`,
-    "fullDesc": `Sreemangal is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.`,
-    "img": "https://i.ibb.co/JKrP9KL/Sreemongol.png"
+    "hotelId": 2,
+    "img": 'https://i.ibb.co/6NfQck4/hotel2.jpg',
+    "name": 'Hotel Ginger',
+    "spec": "4 Guests 2 Bedrooms 2 Beds 2 Baths",
+    "wifi": "Free Wifi Air Conditioning Kitchen",
+    "available": 20,
+    "star": 4.8,
+    "price": 52,
+    "cancel": 'Cancellation flexibility available'
+},
+{
+    "id": 2,
+    "hotelId": 3,
+    "img": 'https://i.ibb.co/pZd5gZf/hotel3.jpg',
+    "name": 'Hotel JhalMuri',
+    "spec": "4 Guests 2 Bedrooms 2 Beds 2 Baths",
+    "wifi": "Free Wifi Air Conditioning Kitchen",
+    "available": 25,
+    "star": 4.9,
+    "price": 34,
+    "cancel": 'Cancellation flexibility available'
+},
+
+{
+    "id": 3,
+    "hotelId": 1,
+    "img": 'https://i.ibb.co/ZBFZgnD/hotel5.jpg',
+    "name": 'Hotel Luxury',
+    "spec": "4 Guests 2 Bedrooms 2 Beds 2 Baths",
+    "wifi": "Free Wifi Air Conditioning Kitchen",
+    "available": 10,
+    "star": 4.8,
+    "price": 52,
+    "cancel": 'Cancellation flexibility available'
 },
 {
     "id": 3,
-    "name": "SUNDARBANS",
-    "desc": `Sundarbans is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...`,
-    "fullDesc": `Sundarbans is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.`,
-    "img": "https://i.ibb.co/mbGZJF4/sundorbon.png"
+    "hotelId": 2,
+    "img": 'https://i.ibb.co/XWfk067/hotel6.jpg',
+    "name": 'Hotel Hilsa',
+    "spec": "4 Guests 2 Bedrooms 2 Beds 2 Baths",
+    "wifi": "Free Wifi Air Conditioning Kitchen",
+    "available": 25,
+    "star": 4.9,
+    "price": 44,
+    "cancel": 'Cancellation flexibility available'
+},
+{
+    "id": 3,
+    "hotelId": 3,
+    "img": 'https://i.ibb.co/fGjkXwZ/hotel7.jpg',
+    "name": 'Hotel Bonsai',
+    "spec": "4 Guests 2 Bedrooms 2 Beds 2 Baths",
+    "wifi": "Free Wifi Air Conditioning Kitchen",
+    "available": 20,
+    "star": 4.9,
+    "price": 34,
+    "cancel": 'Cancellation flexibility available'
 }
 ];
 
