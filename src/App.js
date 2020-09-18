@@ -24,9 +24,6 @@ function App() {
     <SelectPlaceContext.Provider value={[selectedPlace, setSelectedPlace, loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-        <Route path="/bookingdetails">
-            <BookingDetails />
-          </Route>
           <Route path="/home">
             <Home />
           </Route>
@@ -36,6 +33,9 @@ function App() {
           <Route path="/booking">
             <Booking />
           </Route>
+          <PrivateRoute path="/bookingdetails">
+            <BookingDetails />
+          </PrivateRoute>
           <Route exact path="/news">
             <DeveloperSleeping />
           </Route>

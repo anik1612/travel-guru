@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import hotelFakeData from '../../hotelFakeData';
 import BlackLogoHeader from '../BlackLogoHeader/BlackLogoHeader';
 import star from '../../images/Icon/star_1_.png';
 import './BookingDetails.css'
 import Map from '../Map/Map';
+import { SelectPlaceContext } from '../../App';
 
 const style = {
     width: '200px',
@@ -14,6 +15,8 @@ const style = {
 
 const BookingDetails = () => {
 
+    const [selectedPlace, setSelectedPlace, loggedInUser, setLoggedInUser] = useContext(SelectPlaceContext);
+
     const hotel = hotelFakeData.slice(0, 3);
     const [hotels] = useState(hotel);
 
@@ -22,9 +25,14 @@ const BookingDetails = () => {
             {/* black logo header */}
             <div className='container border-bottom'>
                 <BlackLogoHeader />
+
             </div>
 
             {/* hotel details */}
+            <div className='container'>
+                <p>{Math.floor(Math.random() * (1 - 250) + 250)} stays Apr {Math.floor(Math.random() * (1 - 15) + 15) + '-' + Math.floor(Math.random() * (15 - 30) + 30)} {Math.floor(Math.random() * 500)} guests</p>
+                <h4>Stay in {selectedPlace.name}</h4>
+            </div>
             <div className='row mt-3 justify-content-between'>
                 <div className='col-md-5 ml-3'>
                     {
