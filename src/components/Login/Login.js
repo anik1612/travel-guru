@@ -11,6 +11,7 @@ import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, han
 const Login = () => {
   const [selectedPlace, setSelectedPlace, loggedInUser, setLoggedInUser] = useContext(SelectPlaceContext);
   const [newUser, setNewUser] = useState(true);
+
   const [user, setUser] = useState({
     isSignedIn: false,
     name: '',
@@ -18,11 +19,12 @@ const Login = () => {
     password: '',
   });
 
+
   initializeLoginFramework();
 
   const history = useHistory();
   const location = useLocation();
-  let { from } = location.state || { from: { pathname: "/" } };
+  let { from } = location.state || { from: { pathname: "/bookingdetails" } };
 
   const handleGoogleLogin = () => {
     handleGoogleSignIn()
@@ -55,18 +57,17 @@ const Login = () => {
   }
 
   const handleBlur = (e) => {
-    console.log(e.target.value);
-    let isFieldValid = true;
-    console.log(e.target.name)
+    let isEmailValid = true;
+    let isPassValid = true;
     if (e.target.name === 'email') {
-      isFieldValid = /\S+@\S+\.\S+/.test(e.target.value);
+      isEmailValid = /\S+@\S+\.\S+/.test(e.target.value);
     }
     if (e.target.name === 'password') {
       const isPasswordValid = e.target.value.length > 6;
       const passwordHasNumber = /\d{1}/.test(e.target.value);
-      isFieldValid = isPasswordValid && passwordHasNumber;
+      isPassValid = isPasswordValid && passwordHasNumber;
     }
-    if (isFieldValid) {
+    if (isEmailValid && isPassValid) {
       const newUserInfo = { ...user };
       newUserInfo[e.target.name] = e.target.value;
       setUser(newUserInfo);
@@ -77,7 +78,6 @@ const Login = () => {
       createUserWithEmailAndPassword(user.name, user.email, user.password)
         .then(res => {
           handleResponse(res, true);
-          console.log(res);
         })
     }
 
@@ -103,22 +103,23 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                   {newUser && <input className="form-control mb-4 login-input" onBlur={handleBlur} type="text" name="" placeholder="First Name" required />}
                   {newUser && <input className="form-control mb-4 login-input" onBlur={handleBlur} type="text" name="" placeholder="Last Name" required />}
-                  <input name="email" type="text" className="form-control mb-4 login-input"  onBlur={handleBlur}  placeholder="Username or Email" required />
-                  <input name="password" type="password" className="form-control mb-4 login-input"  onBlur={handleBlur} placeholder="Password" required />
+                  <input name="email" type="text" className="form-control mb-4 login-input" onBlur={handleBlur} placeholder="Username or Email" required />
+                  <input name="password" type="password" className="form-control mb-4 login-input" onBlur={handleBlur} placeholder="Password" required />
                   {newUser && <input type="password" name="passwordMatch" className="form-control mb-4 login-input" onBlur={handleBlur} placeholder="Confirm Password" required />}
 
                   <div className='d-flex justify-content-between mb-2'>
-                  <div>
-                  {!newUser && <input type="checkbox" name="remember" id="" />}
-                  {!newUser && <label for="remember" className="ml-1">Remember Me</label>}
-                  </div>
-                  {!newUser && <Link>Forgot Password</Link>}  
+                    <div>
+                      {!newUser && <input type="checkbox" name="remember" id="" />}
+                      {!newUser && <label for="remember" className="ml-1">Remember Me</label>}
+                    </div>
+                    {!newUser && <Link>Forgot Password</Link>}
                   </div>
                   <input type='submit' className="btn btn-warning btn-block mb-3" value={newUser ? 'Create an account' : 'Login'}></input>
                 </form>
 
               </div>
               <p className='text-center mb-0'>Already have an account? <Link onClick={() => setNewUser(!newUser)} className='text-warning'>Login</Link></p>
+
             </div>
           </div>
         </div>

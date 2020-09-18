@@ -16,7 +16,7 @@ const Header = () => {
                     <Link to="/home"><img src={brandImg} alt="brand-img" /></Link>
                 </Navbar.Brand>
                 <Form inline>
-                    <FormControl style={{ width: "300px", background: 'none'}} type="text" placeholder="&#xf002;  Search Your Destination" className="mr-5 text-white header-form"/>
+                    <FormControl style={{ width: "300px", background: 'none' }} type="text" placeholder="&#xf002;  Search Your Destination" className="mr-5 text-white header-form" />
                 </Form>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -25,7 +25,7 @@ const Header = () => {
                         <Link to='/destination' className="mr-5 text-white font-weight-bold" to="/destination">Destination</Link>
                         <Link to='/blog' className="mr-5 text-white font-weight-bold" to="/blog">Blog</Link>
                         <Link to='/contact' className="mr-5 text-white font-weight-bold" to="/Contact">Contact</Link>
-                        {loggedInUser.email || loggedInUser.name ? <Link onClick={()=> setLoggedInUser({})} className="btn btn-success">{loggedInUser.name ? loggedInUser.name + ' / Logout' : loggedInUser.email.slice(0,5) + ' / Logout'}</Link> : <Link to="/login" className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Link>
+                        {loggedInUser.email || loggedInUser.name ? <Link onClick={() => setLoggedInUser({})} className="btn btn-success">{loggedInUser.name ? loggedInUser.name + ' / Logout' : loggedInUser.email.slice(0, 5) + ' / Logout'}</Link> : <Link to="/login" className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Link>
                         }
                     </Nav>
                 </Navbar.Collapse>
