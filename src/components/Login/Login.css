@@ -1,0 +1,21 @@
+.login-input{
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+.card{
+    padding: 10px 10px 0 10px;
+    font-family: Montserrat;
+}
+
+::placeholder{
+    color: black!important;
+}
+
+.bottom-border{
+    border-bottom: 1px solid lightgrey;
+    width: 135px;
+}
+

@@ -1,0 +1,25 @@
+.banner-img img{
+    width: 180px;
+    height: 250px;
+    border-radius: 5px;
+    margin-left: 10px;
+    opacity: .7;
+}
+
+.banner-img img:hover{
+    border: 3px solid goldenrod;
+    opacity: .9;
+}
+
+#active{
+    border: 3px solid goldenrod;
+}
+
+.link-img{
+    position: relative;
+}
+
+.photo-text{
+    position: absolute;
+    top: 85%;
+}

@@ -7,6 +7,17 @@
         "fortawesome",
         "icon",
         "labelledby",
+        "sajek",
+        "sreemongol",
+        "sundarban",
+        "sundorbon",
         "tabindex"
-    ]
+    ],
+    "emmet.excludeLanguages": [
+
+        "markdown"
+    ],
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+     }
 }

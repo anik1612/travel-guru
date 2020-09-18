@@ -3,6 +3,10 @@
     url('../../images/Image/Rectangle 1.png');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+.row{
+    margin: 0;
+    padding: 0;
+}

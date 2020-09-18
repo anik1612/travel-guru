@@ -2,8 +2,9 @@
     height: 60px;
 }
 
-::placeholder{
-    color: white !important;
+.header-form::placeholder{
+    color: white!important;
+    font-family: 'Bebas Neue', fontawesome;
 }
 
 .navbar{

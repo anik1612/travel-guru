@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { Button, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Form, FormControl, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import brandImg from '../../images/brand-logo.png'
 import './Header.css'
 import 'font-awesome/css/font-awesome.min.css';
+import { SelectPlaceContext } from '../../App';
 
 const Header = () => {
-
+    const [selectedPlace, setSelectedPlace, loggedInUser, setLoggedInUser] = useContext(SelectPlaceContext);
+    console.log(loggedInUser);
     return (
         <div className='container'>
             <Navbar className='pt-4 navbar' expand="lg">
@@ -14,16 +16,17 @@ const Header = () => {
                     <Link to="/home"><img src={brandImg} alt="brand-img" /></Link>
                 </Navbar.Brand>
                 <Form inline>
-                    <FormControl style={{ width: "300px", background: 'none', fontFamily: "FontAwesome"}} type="text" placeholder="&#xf002;    Search Your Destination" className="mr-5 text-white"/>
+                    <FormControl style={{ width: "300px", background: 'none'}} type="text" placeholder="&#xf002;  Search Your Destination" className="mr-5 text-white header-form"/>
                 </Form>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="nav-link d-flex align-items-center">
+                    <Nav className="nav-link align-items-md-center">
                         <Link className="mr-5 text-white font-weight-bold " to="/news">News</Link>
                         <Link className="mr-5 text-white font-weight-bold" to="/destination">Destination</Link>
                         <Link className="mr-5 text-white font-weight-bold" to="/blog">Blog</Link>
                         <Link className="mr-5 text-white font-weight-bold" to="/Contact">Contact</Link>
-                        <Button className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Button>
+                        {loggedInUser.email || loggedInUser.name ? <Link className="btn btn-dark">{loggedInUser.name}</Link> : <Link to="/login" className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
