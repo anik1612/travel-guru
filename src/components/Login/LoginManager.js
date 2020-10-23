@@ -69,11 +69,12 @@ export const handleGoogleSignIn = () => {
       const newUserInfo = {};
       newUserInfo.error = error.message;
       newUserInfo.success = false;
+      console.log(error);
       return newUserInfo;
     });
  }
 
- export const signInWithEmailAndPassword = (email, password) => {
+ export const signInWithEmailAndPassword = (email, password) =>{
     return firebase.auth().signInWithEmailAndPassword(email, password)
     .then(res => {
       const newUserInfo = res.user;
@@ -94,7 +95,7 @@ export const handleGoogleSignIn = () => {
     user.updateProfile({
       displayName: name
     }).then(function() {
-      console.log('user name updated successfully!!')
+      console.log('user name updated successfully!')
     }).catch(function(error) {
       console.log(error)
     });

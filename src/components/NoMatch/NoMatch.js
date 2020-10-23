@@ -14,6 +14,7 @@ const NoMatch = () => {
                 <Box textAlign="center" m={1}><img src={errorImg} alt="page-not-found" /></Box>
             </div>
         </div>
+
     );
 };
 

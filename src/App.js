@@ -14,12 +14,20 @@ import Booking from './components/Booking/Booking';
 import BookingDetails from './components/BookingDetails/BookingDetails';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import DeveloperSleeping from './components/DeveloperSleeping/DeveloperSleeping';
+import useLocalStorageState from 'use-local-storage-state/dist';
 
 export const SelectPlaceContext = createContext([]);
 
 function App() {
-  const [selectedPlace, setSelectedPlace] = useState([])
-  const [loggedInUser, setLoggedInUser] = useState({})
+  const [selectedPlace, setSelectedPlace] = useLocalStorageState('placeName', [])
+  const [loggedInUser, setLoggedInUser] = useLocalStorageState('userInfo', [{
+    isSignedIn: false,
+    name: '',
+    email: '',
+    password: '',
+    error: '',
+  }])
+
   return (
     <SelectPlaceContext.Provider value={[selectedPlace, setSelectedPlace, loggedInUser, setLoggedInUser]}>
       <Router>

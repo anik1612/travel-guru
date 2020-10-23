@@ -10,15 +10,15 @@ import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, han
 
 const Login = () => {
   const [selectedPlace, setSelectedPlace, loggedInUser, setLoggedInUser] = useContext(SelectPlaceContext);
-  const [newUser, setNewUser] = useState(true);
+  const [newUser, setNewUser] = useState(false);
 
   const [user, setUser] = useState({
     isSignedIn: false,
     name: '',
     email: '',
     password: '',
+    error: '',
   });
-
 
   initializeLoginFramework();
 
@@ -39,13 +39,6 @@ const Login = () => {
         handleResponse(res, true);
       })
 
-  }
-
-  const signOut = () => {
-    handleSignOut()
-      .then(res => {
-        handleResponse(res, false);
-      })
   }
 
   const handleResponse = (res, redirect) => {
@@ -73,6 +66,7 @@ const Login = () => {
       setUser(newUserInfo);
     }
   }
+
   const handleSubmit = (e) => {
     if (newUser && user.email && user.password) {
       createUserWithEmailAndPassword(user.name, user.email, user.password)
@@ -99,7 +93,6 @@ const Login = () => {
             <div className="card-body">
               {newUser ? <h5 className="card-title mb-4">Create an account</h5> : <h5 className="card-title mb-4">Login</h5>}
               <div className='form-group'>
-
                 <form onSubmit={handleSubmit}>
                   {newUser && <input className="form-control mb-4 login-input" onBlur={handleBlur} type="text" name="" placeholder="First Name" required />}
                   {newUser && <input className="form-control mb-4 login-input" onBlur={handleBlur} type="text" name="" placeholder="Last Name" required />}
@@ -109,8 +102,8 @@ const Login = () => {
 
                   <div className='d-flex justify-content-between mb-2'>
                     <div>
-                      {!newUser && <input type="checkbox" name="remember" id="" />}
-                      {!newUser && <label for="remember" className="ml-1">Remember Me</label>}
+                      {!newUser && <input type="checkbox" name="remember" id="remember" />}
+                      {!newUser && <label id="remember" className="ml-1">Remember Me</label>}
                     </div>
                     {!newUser && <Link>Forgot Password</Link>}
                   </div>
@@ -118,8 +111,7 @@ const Login = () => {
                 </form>
 
               </div>
-              <p className='text-center mb-0'>Already have an account? <Link onClick={() => setNewUser(!newUser)} className='text-warning'>Login</Link></p>
-
+              <p className='text-center mb-0'>{newUser ? 'Already have an account' : `Don't have an account?`} <Link to={'/login'} onClick={() => setNewUser(!newUser)} className='text-warning'>{newUser ? 'Login' : 'Create an account'}</Link></p>
             </div>
           </div>
         </div>

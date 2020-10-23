@@ -8,7 +8,7 @@ import { SelectPlaceContext } from '../../App';
 
 const Header = () => {
     const [selectedPlace, setSelectedPlace, loggedInUser, setLoggedInUser] = useContext(SelectPlaceContext);
-    console.log(loggedInUser);
+
     return (
         <div className='container'>
             <Navbar className='pt-4 navbar' expand="lg">
@@ -21,11 +21,11 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="nav-link align-items-md-center">
-                        <Link to='/news' className="mr-5 text-white font-weight-bold " to="/news">News</Link>
-                        <Link to='/destination' className="mr-5 text-white font-weight-bold" to="/destination">Destination</Link>
-                        <Link to='/blog' className="mr-5 text-white font-weight-bold" to="/blog">Blog</Link>
-                        <Link to='/contact' className="mr-5 text-white font-weight-bold" to="/Contact">Contact</Link>
-                        {loggedInUser.email || loggedInUser.name ? <Link onClick={() => setLoggedInUser({})} className="btn btn-success">{loggedInUser.name ? loggedInUser.name + ' / Logout' : loggedInUser.email.slice(0, 5) + ' / Logout'}</Link> : <Link to="/login" className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Link>
+                        <Link to='/news' className="mr-5 text-white font-weight-bold ">News</Link>
+                        <Link to='/destination' className="mr-5 text-white font-weight-bold">Destination</Link>
+                        <Link to='/blog' className="mr-5 text-white font-weight-bold">Blog</Link>
+                        <Link to='/contact' className="mr-5 text-white font-weight-bold">Contact</Link>
+                        {loggedInUser.email || loggedInUser.name ? <Link onClick={() => setLoggedInUser({})} className="btn btn-success">{loggedInUser.name ? loggedInUser.name.split(' ')[0] + '/Logout' : loggedInUser.email.split(' ')[0] + '/Logout'}</Link> : <Link to="/login" className="btn btn-sm btn-warning px-4 py-2 font-weight-bold">Login</Link>
                         }
                     </Nav>
                 </Navbar.Collapse>
